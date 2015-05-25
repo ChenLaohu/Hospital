@@ -1,0 +1,94 @@
+
+function showAgreement(){
+	$("#readagreement").removeAttr("onclick");
+	$("#agreement").show();
+	$("#agreement iframe").attr("src","http://www.17sucai.com/help");//此处为链接地址
+}
+
+function agree(){
+	$("#agreement").hide();
+	$("#readagreement").attr("onclick","showAgreement();");
+	if($("#agree").attr("checked")!="checked") $("#agree").trigger("click");
+}
+
+function onReadAgreementClick(){
+	return;
+	if($("#agree").attr("checked")){
+		$("#agree").removeAttr("checked");
+	}else{
+		$("#agree").attr("checked","checked");
+	}
+
+}
+
+var flags = [false,false,false,false];
+
+//邮箱验证，网上找到的正则
+var RegEmail = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+
+function lineState(name,state,msg){
+	if(state=="none"){$("#line_"+name+" .input div").attr("class","none"); return;}
+	if(state=="corect"){$("#line_"+name+" .input div").attr("class","corect");return;}
+	$("#line_"+name+" .input span").text(msg);$("#line_"+name+" .input div").attr("class","error");
+}
+
+function v_account(){
+	var account = $("#account").val();
+	if(!RegEmail.test(account)) {lineState("account","error","邮箱格式不正确"); flags[0]=false;enableSubmit(false);}
+	else{lineState("account","corect","");flags[0] = true;}
+	v_submitbutton();
+}
+
+function v_name(){
+	var name = $("#name").val();
+	if(name.length==0) {
+		lineState("name","error","不得为空"); 
+		flags[1]=false;
+	}else{
+		if(name.length>32) {
+			lineState("name","error","必须少于32个字符"); 
+			flags[1]=false;
+		}else{
+			lineState("name","corect",""); 
+			flags[1] = true;
+		}
+	}
+
+}
+
+function v_password(){
+	var password = $("#password").val();
+	if(password.length<6) {
+		lineState("password","error","必须多于或等于6个字符"); 
+		flags[2]=false;
+	}else{
+		if(password.length>16){
+			lineState("password","error","必须少于或等于16个字符"); 
+			flags[2]=false;
+		}else{
+			lineState("password","corect","");
+			flags[2] = true;
+		}
+	}
+	v_repeat();
+
+}
+
+function v_repeat(){
+	if(!flags[2]) {
+		lineState("repeat","none",""); 
+		return;
+	}
+	if($("#password").val()!=$("#repeat").val()) {
+		lineState("repeat","error","密码不一致"); 
+		flags[3]=false;
+	}else{
+		lineState("repeat","corect","");
+		flags[3] = true;
+	}
+
+}
+
+function adaptValue(){
+	return true;
+}

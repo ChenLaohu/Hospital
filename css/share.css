@@ -1,0 +1,29 @@
+﻿*{margin: 0px; padding: 0px;}
+img{border: none;}
+a{text-decoration: none;}
+
+header{height: 125px; background: url(../images/repeat.jpg) repeat-x;}
+#header_top{width: 1240px; height: 81px; margin: auto;}
+#header_top_logo{width: 261px; height: 81px; float: left;}
+#header_top_search{width: 430px; height: 81px; float: left; margin-left: 20px; line-height:81px;}
+#header_top_application{width: 240px; height: 78px; float: right;}
+#header_top_application a{float: left;}
+#header_bottom{width: 1240px; height: 40px; margin: auto;}
+#header_bottom_lm{width: 1240px; float: left;}
+#header_bottom_lm ul{list-style: none; }
+#header_bottom_lm ul li{height: 40px; line-height: 40px; float: left; margin-left: 110px;}
+#header_bottom_lm ul li p{float: left;}
+#header_bottom_lm ul li p img{margin-top: 5px;}
+#header_bottom_lm ul li a{float: left; margin-left: 5px; color: #000; font-size: 18px; font-weight: bold;}
+#header_bottom_lm ul li a:hover{color: #f60;}
+#header_top_search ul{list-style:none;}
+#header_top_search ul li{float:left; float:left; margin-left:10px;}
+#header_top_search ul li a{font-size:16px; color:#000;}
+#header_top_search ul li a:hover{color:#f60;}
+/*结束header*/
+
+
+
+footer{width: 1240px; height: 100px; margin: auto; border-top: 1px solid #dadada; text-align: center;}
+footer p{font-size: 12px; color: #B3B3B3;margin-top: 10px;}
+/*结束footer*/

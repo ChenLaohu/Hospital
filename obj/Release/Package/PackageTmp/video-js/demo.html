@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video.js | HTML5 Video Player</title>
+
+  
+  <link href="video-js.css" rel="stylesheet" type="text/css">
+  <script src="video.js"></script>
+  <script>
+    videojs.options.flash.swf = "video-js.swf";
+  </script>
+
+
+</head>
+<body>
+
+  <video id="example_video_1" class="video-js vjs-default-skin" controls preload="none" width="640" height="264"
+      poster="http://video-js.zencoder.com/oceans-clip.png"
+      data-setup="{}">
+   
+    <source src="swf/33.mp4" type='video/mp4' />
+    <track kind="captions" src="captions.vtt" srclang="ch" label="English"></track>
+
+  </video>
+
+</body>
+</html>
