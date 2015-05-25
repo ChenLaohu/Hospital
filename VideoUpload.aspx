@@ -194,8 +194,8 @@
                 }
             });
             alert("上传成功！");
-            //history.go(0);
-            //location.reload();
+            history.go(0);
+            location.reload();
         }
 
 
