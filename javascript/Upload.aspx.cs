@@ -70,11 +70,5 @@ namespace Hospital.javascript
             VideoDao dao = new VideoDao();
             return dao.insert(videoname, enname, doctor, ssyy, ssjj, bpts, jybz, spsm, type, n);
         }
-
-        [WebMethod]
-        public static bool CheckLogin() {
-            UserDao dao = new UserDao();
-            return dao.CheckLogin();
-        }
     }
 }

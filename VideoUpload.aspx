@@ -104,29 +104,9 @@
                 else
                     $("#select2").hide();
             });
-
-
-            $.ajax({
-                type: "post",
-                url: "javascript/Upload.aspx/CheckLogin",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                async: false,
-                success: function (data) {
-                    if (data.d == false) {
-                        alert("请先登录！");
-                        window.location.href = "Login.aspx";
-                    }
-                },
-                error: function (err) {
-                    alert(err);
-                }
-            });
         });
 
-
         function insertDeatilToSQL() {
-
 
             if ($("#divprogresscontainer").html() == "") {
                 //alert($("#divprogresscontainer").html());
@@ -186,6 +166,18 @@
                         alert("请上传视频后再进行提交！");
                     } else {
                         alert("上传成功！");
+
+                        //$("#videoname").val("");
+                        //$("#enname").val("");
+                        //$("#doctor").val("");
+                        //$("#ssyy").val("");
+                        //$("#ssjj").val("");
+                        //$("#bpts").val("");
+                        //$("#jybz").val("");
+                        //$("#spsm").val("");
+
+                        //$("#divprogresscontainer").html("");
+
                         history.go(0);
                     }
                 },
@@ -193,9 +185,7 @@
                     alert(err);
                 }
             });
-            alert("上传成功！");
-            //history.go(0);
-            //location.reload();
+
         }
 
 
