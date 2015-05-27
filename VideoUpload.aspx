@@ -138,21 +138,28 @@
             var doctor = $("#doctor").val();  //医生
             var ssyy = $("#ssyy").val(); //所属医院
             if (videoname == "") {
-                alert("视频名称不能为空");
+                alert("视频名称不能为空！");
                 return;
             }
             if (doctor == "") {
-                alert("医生不能为空");
+                alert("医生不能为空！");
                 return;
             }
             if (ssyy == "") {
-                alert("所属医院不能为空");
+                alert("所属医院不能为空！");
                 return;
             }
             if (!upTmp) {
                 alert("正在上传请稍等！");
                 return;
             }
+
+            if ($("#divprogresscontainer").html().indexOf('转换完成') < 0)
+            {
+                alert("请上传完后再提交！")
+                return;
+            }
+
             upTmp = false;
 
             var videoname = $("#videoname").val();
@@ -193,9 +200,8 @@
                     alert(err);
                 }
             });
-            alert("上传成功！");
+            //alert("上传成功！");
             //history.go(0);
-            //location.reload();
         }
 
 

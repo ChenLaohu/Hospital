@@ -42,10 +42,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Pex.PlayVideo, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Pex.PlayVideo.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -311,6 +307,10 @@
     <ProjectReference Include="..\Pex.Core\Pex.Core.csproj">
       <Project>{d73e6140-3cb0-4ba9-acf0-eebeae0129a7}</Project>
       <Name>Pex.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pex.PlayVideo\Pex.PlayVideo.csproj">
+      <Project>{8f5c8b2f-8aa2-4fc6-a3a1-c96eab0ec044}</Project>
+      <Name>Pex.PlayVideo</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

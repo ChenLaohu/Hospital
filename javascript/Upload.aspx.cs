@@ -26,33 +26,33 @@ namespace Hospital.javascript
                     uploadFile = Request.Files[i];
                     if (uploadFile == null || uploadFile.ContentLength == 0 || string.IsNullOrEmpty(uploadFile.FileName))
                         continue;
+
                     string savePath = Path.Combine(FilesRoot, DateTime.Now.ToString("yyyyMMdd"));
                     string savePath1 = Path.Combine(FilesRoot1, DateTime.Now.ToString("yyyyMMdd"));
-                    //savePath = Path.Combine(savePath, Guid.NewGuid().ToString());
                     string fileNameGuid = Guid.NewGuid().ToString("N") + Path.GetExtension(uploadFile.FileName);
-                    string playFileNameGuid = Guid.NewGuid().ToString("N") + ".mp4";
-                    string imgFileNameGuid = Guid.NewGuid().ToString("N") + ".jpg";
+                    //string playFileNameGuid = Guid.NewGuid().ToString("N") + ".mp4";
+                    //string imgFileNameGuid = Guid.NewGuid().ToString("N") + ".jpg";
                     if (!Directory.Exists(savePath))
                         Directory.CreateDirectory(savePath);
-                    string filename = string.Format("{0}\\{1}", savePath, fileNameGuid);
-                    string playFilename = string.Format("{0}\\{1}", savePath, playFileNameGuid);
-                    string imgFilename = string.Format("{0}\\{1}", savePath, imgFileNameGuid);
+                    string filename = string.Format("{0}\\{1}", savePath, fileNameGuid);  //绝对
+                    //string playFilename = string.Format("{0}\\{1}", savePath, playFileNameGuid); //绝对
+                    //string imgFilename = string.Format("{0}\\{1}", savePath, imgFileNameGuid); //绝对
 
 
-                    string playFilename1 = string.Format("{0}\\{1}", savePath1, playFileNameGuid);
-                    string imgFilename1 = string.Format("{0}\\{1}", savePath1, imgFileNameGuid);
+                    string playFilename1 = string.Format("{0}\\{1}", savePath1, fileNameGuid); //相对
+                    //string imgFilename1 = string.Format("{0}\\{1}", savePath1, imgFileNameGuid); //相对
 
                     uploadFile.SaveAs(filename);//保存文件
 
 
                     //将路径写入session
                     HttpContext.Current.Session["videoPath"] = playFilename1;
-                    HttpContext.Current.Session["imgPath"] = imgFilename1;
+                    //HttpContext.Current.Session["imgPath"] = imgFilename1;
 
                     //转换文件 截图
-                    Pex.PlayVideo.Tool.OperateMethod.ChangeVideoType(filename, playFilename, imgFilename);
+                    //Pex.PlayVideo.Tool.OperateMethod.ChangeVideoType(filename, playFilename, imgFilename); //3个绝对
 
-                    Response.Write("");
+                    Response.Write("转换完成！");
                 }
             }
             catch (Exception ex)

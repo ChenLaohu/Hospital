@@ -36,3 +36,5 @@ G:\Git\Pex_CopyTube\Hospital\bin\Pex.Core.pdb
 G:\Git\Pex_CopyTube\Hospital\obj\Debug\Hospital.csprojResolveAssemblyReference.cache
 G:\Git\Pex_CopyTube\Hospital\obj\Debug\Hospital.dll
 G:\Git\Pex_CopyTube\Hospital\obj\Debug\Hospital.pdb
+G:\Git\Pex_CopyTube\Hospital\bin\Pex.PlayVideo.dll
+G:\Git\Pex_CopyTube\Hospital\bin\Pex.PlayVideo.pdb
