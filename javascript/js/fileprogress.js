@@ -174,9 +174,10 @@ FileProgress.prototype.setComplete = function (settings) {
     //删除
     //this.filenameA.style.display = "";
     this.hrefControl.style.display = "";
-    this.hrefControl.innerHTML = "删除";
+    //this.hrefControl.innerHTML = "删除";
+    this.hrefControl.innerHTML = "";
     //下载
-    this.fileSpan.href = "http://10.119.255.16:8088/DownLoad.aspx?zjxxid=0";
+    //this.fileSpan.href = "http://10.119.255.16:8088/DownLoad.aspx?zjxxid=0";
 
     //查看 根据扩展名去判断是否显示
     //    var class_=/\.[^\.]
