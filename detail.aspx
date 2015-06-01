@@ -47,6 +47,25 @@
                 });
             }
 
+            function addClick() {
+                $.ajax({
+                    type: "post",
+                    url: "javascript/Upload.aspx/addClick",
+                    data:"{TableID:'"+getUrlParam('tableid')+"'}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    //async: false,
+                    success: function (data) {
+                        //if (data.d == false) {
+                        //    //alert("请先登录！");
+                        //    //window.location.href = "Login.aspx";
+                        //}
+                    },
+                    error: function (err) {
+                        alert(err);
+                    }
+                });
+            }
 
 			function addClick() {
                 $.ajax({
