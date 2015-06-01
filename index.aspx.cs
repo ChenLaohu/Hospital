@@ -28,7 +28,7 @@ namespace Hospital
             list1 = dao.getList(1);
             list2 = dao.getList(6);
             list3 = dao.getList(10);
-            list4 = dao.getList(10);
+            list4 = dao.getList(1);
             list5 = dao.getList(10);
         }
 

@@ -42,6 +42,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Pex.PlayVideo, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Pex.PlayVideo\bin\Debug\Pex.PlayVideo.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -57,10 +61,31 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Aspose.Cells.dll" />
+    <Content Include="bin\Aspose.Words.dll" />
+    <Content Include="bin\Common.Logging.dll" />
+    <Content Include="bin\Evaluate.Calculator.dll" />
+    <Content Include="bin\Evaluate.Calculator.pdb" />
+    <Content Include="bin\Hospital.dll" />
+    <Content Include="bin\Hospital.pdb" />
+    <Content Include="bin\IMAP4.Net.dll" />
+    <Content Include="bin\Microsoft.Web.UI.WebControls.dll" />
+    <Content Include="bin\MySql.Data.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Pex.Core.dll" />
+    <Content Include="bin\Pex.PlayVideo.dll" />
+    <Content Include="bin\Pex.SMS.dll" />
+    <Content Include="bin\Pex.Workflow.dll" />
+    <Content Include="bin\Quartz.dll" />
+    <Content Include="bin\Quartz.pdb" />
+    <Content Include="bin\Quartz.xml" />
+    <Content Include="bin\zlib.net.dll" />
     <Content Include="css\default.css" />
     <Content Include="css\detail.css" />
     <Content Include="css\index.css" />
     <Content Include="css\menu.css" />
+    <Content Include="css\Personal.css" />
     <Content Include="css\Register.css" />
     <Content Include="css\share.css" />
     <Content Include="css\VideoUpload.css" />
@@ -142,6 +167,7 @@
     <Content Include="js\Register_Detaile.js" />
     <Content Include="list.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Personal.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Register_Detaile.aspx" />
     <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
@@ -194,6 +220,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Data\Thumbnail.cs" />
+    <Compile Include="ashx\Interface.ashx.cs">
+      <DependentUpon>Interface.ashx</DependentUpon>
+    </Compile>
     <Compile Include="ashx\Register.ashx.cs">
       <DependentUpon>Register.ashx</DependentUpon>
     </Compile>
@@ -228,6 +257,7 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Myclass\InterfaceTosql.cs" />
     <Compile Include="Myclass\RegisterToUser.cs" />
     <Compile Include="DataCommand.cs" />
     <Compile Include="index.aspx.cs">
@@ -236,6 +266,13 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Personal.aspx.cs">
+      <DependentUpon>Personal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personal.aspx.designer.cs">
+      <DependentUpon>Personal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
@@ -285,6 +322,7 @@
     <Content Include="ashx\UploadFilesImage.ashx" />
     <Content Include="ashx\Register.ashx" />
     <Content Include="javascript\20150524\Thumbs.db" />
+    <Content Include="ashx\Interface.ashx" />
     <None Include="Properties\PublishProfiles\pex.pubxml" />
     <Content Include="Share.Master" />
     <Content Include="video-js\demo.captions.vtt" />
@@ -307,10 +345,6 @@
     <ProjectReference Include="..\Pex.Core\Pex.Core.csproj">
       <Project>{d73e6140-3cb0-4ba9-acf0-eebeae0129a7}</Project>
       <Name>Pex.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Pex.PlayVideo\Pex.PlayVideo.csproj">
-      <Project>{8f5c8b2f-8aa2-4fc6-a3a1-c96eab0ec044}</Project>
-      <Name>Pex.PlayVideo</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

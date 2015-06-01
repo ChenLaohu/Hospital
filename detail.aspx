@@ -13,6 +13,7 @@
         <script>
             window.onload = function () {
                 showVideo();
+				addClick();
             }
 
             function showVideo() {
@@ -47,6 +48,26 @@
             }
 
 
+			function addClick() {
+                $.ajax({
+                    type: "post",
+                    url: "javascript/Upload.aspx/addClick",
+                    data:"{TableID:'"+getUrlParam('tableid')+"'}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    //async: false,
+                    success: function (data) {
+                        //if (data.d == false) {
+                        //    //alert("请先登录！");
+                        //    //window.location.href = "Login.aspx";
+                        //}
+                    },
+                    error: function (err) {
+                        alert(err);
+                    }
+                });
+            }
+			
             function getUrlParam(name) {
                 var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
                 var r = window.location.search.substr(1).match(reg);  //匹配目标参数
@@ -85,7 +106,7 @@
 								</div>
 								<div class="video_content_img_title"><%=title %></div>
 								<div class="video_content_img_title_double"><%=title %></div>
-								<div class="video_content_img_title_double count"><%=list1[i].CreateTime %></div>
+								<div class="video_content_img_title_double count"><%=list1[i].click %></div>
 							</div>
 						</a>
                         <%} %>

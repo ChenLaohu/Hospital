@@ -76,5 +76,11 @@ namespace Hospital.javascript
             UserDao dao = new UserDao();
             return dao.CheckLogin();
         }
+
+        [WebMethod]
+        public static bool addClick(string TableID) {
+            VideoDao dao = new VideoDao();
+            return dao.addClick(TableID);
+        }
     }
 }

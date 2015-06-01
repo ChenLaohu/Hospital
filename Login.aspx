@@ -25,6 +25,7 @@
     	            success: function (result) {
     	                if (result == 1) {
     	                    document.location.href = "VideoUpload.aspx";
+    	                    //history.go(-1);
     	                }
     	                else
     	                    alert("登录失败");
@@ -37,6 +38,15 @@
     	        });
     	    }
         </script>
+        <script>
+            document.onkeydown = function (event) {
+                e = event ? event : (window.event ? window.event : null);
+                if (e.keyCode == 13) {
+                    Login();
+                }
+            }
+        </script> 
+
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

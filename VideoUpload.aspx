@@ -95,16 +95,56 @@
 
         $(document).ready(function () {
             $("#select2").hide();
+            $("#select4").hide(); //医生之声 二级
+            $("#select5").hide(); //医学课程 二级
         });
+
+       
         $(function () {
+
             $('#select').change(function () {
                 if ($(this).children('option:selected').val() == "3") {
-                    $("#select2").show();;//去除input元素的disable属性
+                    $("#select2").show();//
                 }
-                else
+                else {
                     $("#select2").hide();
+                }
+            });
+            $('#select3').change(function () {
+                if ($(this).children('option:selected').val() == "00") {
+                    $("#select").show();//
+                    selectChange(); //提供三级选择
+                    $("#select4").hide(); //医生之声 二级
+                    $("#select5").hide(); //医学课程 二级
+                }
+                if($(this).children('option:selected').val() == "10") //医学课程
+                {
+                    $("#select2").hide();
+                    $("#select4").hide(); //医生之声 二级
+                    $("#select5").show(); //医学课程 二级
+                    $("#select").hide();
+                }
+                if ($(this).children('option:selected').val() == "11") //医学课程
+                {
+                    $("#select2").hide();
+                    $("#select4").show(); //医生之声 二级
+                    $("#select5").hide(); //医学课程 二级
+                    $("#select").hide();
+                }
+                    
             });
 
+            //提供三级选择
+            function selectChange()
+            {
+                $('#select').change(function () {
+                    if ($(this).children('option:selected').val() == "3") {
+                        $("#select2").show();
+                    }
+                    else
+                        $("#select2").hide();
+                });
+            }
 
             $.ajax({
                 type: "post",
@@ -170,12 +210,29 @@
             var bpts = $("#bpts").val();
             var jybz = $("#jybz").val();
             var spsm = $("#spsm").val();
-            var type = $("#select").val();
-            var n = "0";
-            if (type == 3) {
-                type = $("#select2").val().replace(/3/, '');
+            var type = $("#select3").val();
+            var n = "0";  //0父类  1子类
+            if (type == 00) {
+                //type = $("#select2").val().replace(/3/, '');
+                type = $("#select").val();
+                if (type == 3)
+                {
+                    type = $("#select2").val().replace(/3/, '');
+                    n = "1";
+                    alert("3");
+                }
+                     
+            }
+            if (type == 11)
+            {
+                type = $("#select4").val().replace(/4/, '');
                 n = "1";
             }
+            if (type == 10) {
+                type = $("#select5").val().replace(/5/, '');
+                n = "1";
+            }
+             
 
             $.ajax({
                 type: "post",
@@ -243,8 +300,13 @@
 					<td class="bt">视频类别：</td>
 					<td class="kong"></td>
 					<td class="nr">
+                        <select id="select3" name="select">
+                          <option value ="00">手术视频</option>
+                          <option value ="10">医学课程</option>
+                          <option value="11">医生之声</option>
+                        </select>
                         <select id="select" name="select">
-                          <option value ="1">甲乳外科</option>
+                            <option value ="1">甲乳外科</option>
                           <option value ="2">腹壁疝外科</option>
                           <option value="3">消化道外科</option>
                           <option value="4">肝胆胰脾外科</option>
@@ -253,12 +315,20 @@
                             <option value="7">胸外科</option>
                             <option value="8">骨科</option>
                             <option value="9">神经外科</option>
+                            <option value="12">其他</option>
                         </select>
                         <select id="select2" name="select">
                           <option value ="31">胃、食道</option>
                           <option value ="32">小肠及肠系变</option>
                           <option value="33">代谢减重外科</option>
                           <option value="34">结直肠</option>
+                        </select>
+                        <select id="select4" name="select">
+                          <option value ="45">其他</option>
+                        </select>
+                        <select id="select5" name="select">
+                          <option value ="56">医学会议</option>
+                            <option value ="57">医学英语</option>
                         </select>
 					</td>
 				</tr>
@@ -282,13 +352,13 @@
 				</tr>
 				<tr><td class="bt"></td></tr>
 				<tr>
-					<td class="bt">手术简介：</td>
+					<td class="bt">患者简介：</td><!--手术简介 患者简介-->
 					<td class="kong"></td>
 					<td class="nr"><input class="reg_input" name="ssjj" id="ssjj" <%--onblur="checkusername(this.value);"--%> style="width:300px;" type="text" /></td>
 				</tr>
 				<tr><td class="bt"></td></tr>
 				<tr>
-					<td class="bt">本片特色：</td>
+					<td class="bt">关键字：</td><!--本片特色 关键字-->
 					<td class="kong"></td>
 					<td class="nr"><input class="reg_input" name="bpts" id="bpts" <%--onblur="checkusername(this.value);"--%> type="text" style="width:300px;" /></td>
 				</tr>

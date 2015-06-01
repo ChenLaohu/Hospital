@@ -40,6 +40,9 @@ namespace Hospital.Myclass
                 case"playVideo":
                     result = this.playVideo(queryString);
                     return result;
+                case"userInformation":
+                    result = this.getUserInformation(queryString);
+                    return result;
 
             }
             return result;
@@ -104,7 +107,18 @@ namespace Hospital.Myclass
         public string playVideo(NameValueCollection queryString)
         {
             VideoDao videoDao = new VideoDao();
+           // bool bl = videoDao.addClick(queryString["tableid"].ToString()); //添加点击量
             return JsonConvert.SerializeObject(videoDao.get(queryString["tableid"].ToString()));
+        }
+
+        /// <summary>
+        /// 获得用户信息
+        /// </summary>
+        /// <returns></returns>
+        public string getUserInformation(NameValueCollection queryString)
+        {
+            UserDao user = new UserDao();
+            return JsonConvert.SerializeObject(user.get(queryString["userName"]).ToString());
         }
 
 	}
