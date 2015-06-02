@@ -16,11 +16,12 @@
         <script>
             window.onload = function () {
                 showVideo();
-				addClick();
+                addClick();
             }
 
             function showVideo() {
                 var html = "";
+                var htmlNew = "";
                 $.ajax({
                     type: "post",
                     url: "/ashx/Register.ashx?act=playVideo&tableid=" + getUrlParam("tableid") + "",// 跳转到 action 
@@ -28,6 +29,23 @@
                     dataType: "json",
                     async: false, //默认为true 异步    videoPath
                     success: function (result) {
+
+                        htmlNew += "<h3>" + result.Title + "</h3>";
+                        htmlNew += "<table>";
+                        htmlNew += "<tr><td class=\"bt\" width=\"30%\">上传人员</td><td class=\"bt_nr\" width=\"70%\">" + result.userName + "</td></tr>";
+                        htmlNew += "<tr><td class=\"kong\"></td></tr>";
+                        htmlNew += "<tr><td class=\"bt\">英文名称</td><td class=\"bt_nr\">" + result.englishTitle + "</td></tr>";
+                        htmlNew += "<tr><td class=\"kong\"></td></tr>";
+                        htmlNew += "<tr> <td class=\"bt\">名主刀医生</td><td class=\"bt_nr\">" + result.zdys + "</td></tr>";
+                        htmlNew += "<tr><td class=\"kong\"></td></tr>";
+                        htmlNew += "<tr> <td class=\"bt\">所属医院</td><td class=\"bt_nr\">" + result.ssyy + "</td></tr>";
+                        htmlNew += "<tr><td class=\"kong\"></td></tr>";
+                        htmlNew += "<tr> <td class=\"bt\">上传时间</td><td class=\"bt_nr\">" + result.CreateTime.substring(0,10) + "</td></tr>";
+                        htmlNew += "<tr><td class=\"kong\"></td></tr>";
+                        htmlNew += "<tr> <td class=\"bt\">点击量</td><td class=\"bt_nr\">" + result.click + "次</td></tr>";
+                        htmlNew += "</table>";
+
+                        document.getElementById("detail").innerHTML = htmlNew;
                         if (result.videoPath != null) {
                             var videoUrl = result.videoPath;
                             html += "<video id=\"example_video_1\" class=\"video-js vjs-default-skin\" controls preload=\"none\" width=\"945\" height=\"450\"  data-setup=\"{}\">";
@@ -54,7 +72,7 @@
                 $.ajax({
                     type: "post",
                     url: "javascript/Upload.aspx/addClick",
-                    data:"{TableID:'"+getUrlParam('tableid')+"'}",
+                    data: "{TableID:'" + getUrlParam('tableid') + "'}",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     //async: false,
@@ -70,11 +88,11 @@
                 });
             }
 
-			function addClick() {
+            function addClick() {
                 $.ajax({
                     type: "post",
                     url: "javascript/Upload.aspx/addClick",
-                    data:"{TableID:'"+getUrlParam('tableid')+"'}",
+                    data: "{TableID:'" + getUrlParam('tableid') + "'}",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     //async: false,
@@ -89,7 +107,7 @@
                     }
                 });
             }
-			
+
             function getUrlParam(name) {
                 var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
                 var r = window.location.search.substr(1).match(reg);  //匹配目标参数
@@ -99,6 +117,10 @@
             }
 
         </script>
+    <style>
+.bt{font-size:12px; text-align:center;}
+.bt_nr{font-size:12px; color:#808080; }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <nav>
@@ -107,31 +129,10 @@
 			<div id="shipin"></div>
 			<!--视频点播-->
 			<div id="xgsp">
-				 <%for(int i=0;i<list1.Count;i++) {%>
-						<a class="video" href="detail.aspx?tableid=<%=list1[i].TableID %> ">
-							<div class="video_content">
-								<div class="video_content_img">
-                                    <%
-                              string imgUrl = "";
-                              string title = "";
-                              if (!Convert.IsDBNull(list1[i].imgPath) && list1[i].imgPath != null)
-                                  imgUrl += list1[i].imgPath.ToString();
-                              else
-                                  imgUrl += "/UpFiles/Tables/sy_73107821932.jpg";
-                              if (list1[i].Title.Length >= 8)
-                                  title = list1[i].Title.Substring(0, 8) + "..";
-                              else
-                                  title = list1[i].Title;
-                                         %>
-                                    <img src="<%=imgUrl %>" width="175" height="100" />
-
-								</div>
-								<div class="video_content_img_title"><%=title %></div>
-								<div class="video_content_img_title_double"><%=title %></div>
-								<div class="video_content_img_title_double count"><%=list1[i].click %></div>
-							</div>
-						</a>
-                        <%} %>
+				<div id="discusz"></div>
+                <div id="detail">
+                    
+                </div>
 			</div>
 		</nav>
 </asp:Content>
