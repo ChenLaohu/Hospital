@@ -4,8 +4,11 @@
 
 <link rel="stylesheet" href="css/detail.css" />
          <script src="http://apps.bdimg.com/libs/jquery/1.7.1/jquery.min.js"></script>
-         <link href="video-js/video-js.css" rel="stylesheet" type="text/css">
+         <link href="video-js/video-js.css" rel="stylesheet" type="text/css"/>
         <script src="video-js/video.js"></script>
+    <!–[if IE]>  
+        <script src="js/html5shiv.js"></script>  
+    <![endif]–>
   <script>
       videojs.options.flash.swf = "video-js/video-js.swf";
   </script>
