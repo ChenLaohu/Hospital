@@ -37,6 +37,15 @@
     	        });
     	    }
         </script>
+        <script>
+            document.onkeydown = function (event) {
+                e = event ? event : (window.event ? window.event : null);
+                if (e.keyCode == 13) {
+                    Login();
+                }
+            }
+        </script> 
+
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

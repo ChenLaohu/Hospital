@@ -25,6 +25,7 @@
     	            success: function (result) {
     	                if (result == 1) {
     	                    document.location.href = "VideoUpload.aspx";
+    	                    //history.go(-1);
     	                }
     	                else
     	                    alert("登录失败");

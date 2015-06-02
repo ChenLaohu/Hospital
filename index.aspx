@@ -44,7 +44,7 @@
 								</div>
 								<div class="video_content_img_title"><%=title %></div>
 								<div class="video_content_img_title_double"><%=title %></div>
-								<div class="video_content_img_title_double count"><%=list2[i].CreateTime.ToString("yyyy-MM-dd") %></div>
+								<div class="video_content_img_title_double count"><%=list2[i].click %></div>
 							</div>
 						</a>
                         <%} %>
@@ -75,7 +75,7 @@
 								</div>
 								<div class="video_content_img_title"><%=title %></div>
 								<div class="video_content_img_title_double"><%=title %></div>
-								<div class="video_content_img_title_double count"><%=list2[i].CreateTime.ToString("yyyy-MM-dd") %></div>
+								<div class="video_content_img_title_double count"><%=list2[i].click %></div>
 							</div>
 						</a>
                         <%} %>
@@ -122,7 +122,7 @@
 								</div>
 								<div class="video_content_img_title"><%=title %></div>
 								<div class="video_content_img_title_double"><%=title %></div>
-								<div class="video_content_img_title_double count"><%=list2[i].CreateTime.ToString("yyyy-MM-dd") %></div>
+								<div class="video_content_img_title_double count"><%=list2[i].click %></div>
 							</div>
 						</a>
                         <%} %>
@@ -173,7 +173,7 @@
 							<div class="list_content_bt"><%=title%></div>
 							<div class="list_content_time">
 								<div class="list_content_time_r"><%=list2[i].userName %></div>
-								<div class="list_content_time_r countNew"><%=list2[i].CreateTime.ToString("yyyy-MM-dd") %></div>
+								<div class="list_content_time_r countNew"><%=list2[i].click %></div>
 							</div>
 						</div>
 					</a>
@@ -200,7 +200,7 @@
 						<div class="list_img"><img src="<%=imgUrl %>" width="65" height="65"/></div>
 						<div class="list_content" href="#">
 							<div class="list_content_bt btNew"><%=title %></div>
-							<div class="list_content_bt time">时间：<%=list2[i].CreateTime.ToString("yyyy-MM-dd") %></div>
+							<div class="list_content_bt time">时间：<%=list2[i].click %></div>
 							<div class="list_content_time">
 								<div class="list_content_time_r"><%=list2[i].userName %></div>
 								<div class="list_content_time_r countNew"></div>

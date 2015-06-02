@@ -21,7 +21,7 @@ nav{width: 1240px; height: 1300px; margin: auto;}
 #ranking{width: 265px;}
 .name{width: 265px; font-size: 24px;}
 .title{width: 255px; height: 38px; margin-top: -40px; line-height: 38px;}
-.ranking_list{height: 40px; width: 265px; background: #f0f0f0; margin-top: 4px; display: block;}
+.ranking_list{height: 40px; width: 265px; background: #f0f0f0; margin-top: 4px; _margin-top:10px; display: block;}
 .new{width: 265px; height: 180px;}
 .list_img{float: left;}
 .list_content{float: left; }

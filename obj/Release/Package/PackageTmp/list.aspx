@@ -33,7 +33,7 @@
                      html += "<div class=\"video_content_img\"><img src=\"" + list[i].imgPath + "\" width=\"175\" height=\"100\" /></div>";
                      html += "<div class=\"video_content_img_title\">" + title + "</div>";
                      html += "<div class=\"video_content_img_title_double\">" + title + "</div>";
-                     html += "<div class=\"video_content_img_title_double count\">" + list[i].CreateTime.substring(0, 10) + "</div>";
+                     html += "<div class=\"video_content_img_title_double count\">" + list[i].click + "</div>";
                      html += "</div>";
                      html += "</a>";
                  }
@@ -73,6 +73,15 @@
 				<!--rihgt_part1-->
 				<div class="menu">
 					<ul>
+                        <li><a href="javascript:MyOnclick('10','0','医学课程');">医学课程</a></li>
+                            <ul>
+								<li><a href="javascript:MyOnclick('6','1','医学会议');">医学会议</a></li>
+								<li><a href="javascript:MyOnclick('7','1','医学英语');">医学英语</a></li>
+							</ul>
+                        <li><a href="javascript:MyOnclick('11','0','医生之声');">医生之声</a></li>
+                            <ul>
+								<li><a href="javascript:MyOnclick('5','1','其他');">其他</a></li>
+							</ul>
 						<li><a href="javascript:MyOnclick('1','0','甲乳外科');">甲乳外科</a></li>
 						<li><a href="javascript:MyOnclick('2','0','腹壁疝外科');">腹壁疝外科</a></li>
 						<li><a href="javascript:MyOnclick('3','0','消化道外科');">消化道外科</a>
@@ -89,6 +98,7 @@
 						<li><a href="javascript:MyOnclick('7','0','胸外科');">胸外科</a></li>
 						<li><a href="javascript:MyOnclick('8','0','骨科');">骨科</a></li>
 						<li><a href="javascript:MyOnclick('9','0','神经外科');">神经外科</a></li>
+                        <li><a href="javascript:MyOnclick('12','0','其他');">其他</a></li>
 					</ul>
 				</div>
 				
