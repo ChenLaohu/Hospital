@@ -145,7 +145,6 @@ FileProgress.prototype.setProgress = function(percent,file)
     {
         //this.hrefSpan.style.display = "none";
 
-
         this.stateButton.style.display = "none";
         this.stateDiv.style.display = "none";
         this.percentSpan.innerHTML = "储存中";
