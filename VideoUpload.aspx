@@ -375,7 +375,10 @@
 					<td class="nr"> <textarea  class="reg_input" name="spsm" id="spsm" <%--onblur="checkusername(this.value);"--%>  style="height:100px; width:400px;"></textarea ></td>
 				</tr>
 			</table>
-                    
+                
+            <div id="jieshao">
+                凡发布的视频、图片、文字等内容若有侵权、色情、暴力等违反法律、法规的内容，视频上传者应负全责！
+            </div>    
             <div class="f_reg_but">
                 <a href="javascript:insertDeatilToSQL();"><img src="images/122.jpg" width="110" height="32" /></a>
             </div>
