@@ -193,12 +193,17 @@
                 alert("正在上传请稍等！");
                 return;
             }
-
+            
+            if ($("#divprogresscontainer").html().indexOf('用户未验证') > 0) {
+                alert("用户未进行审核,审核通过后才可以进行视频上传！")
+                return;
+            }
             if ($("#divprogresscontainer").html().indexOf('转换完成') < 0)
             {
                 alert("请上传完后再提交！")
                 return;
             }
+
 
             upTmp = false;
 

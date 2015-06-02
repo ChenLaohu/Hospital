@@ -16,6 +16,11 @@ namespace Hospital.javascript
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!new UserDao().getAtt()) {
+                Response.Write("用户未验证！");
+                return;
+            }
+
             string FilesRoot1 = ConfigurationManager.AppSettings["FilesRoot"];
             string FilesRoot = Server.MapPath(FilesRoot1);
             try

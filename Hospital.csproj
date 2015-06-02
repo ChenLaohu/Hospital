@@ -42,10 +42,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Pex.PlayVideo, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Pex.PlayVideo\bin\Debug\Pex.PlayVideo.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -90,8 +86,6 @@
     <Content Include="css\share.css" />
     <Content Include="css\VideoUpload.css" />
     <Content Include="detail.aspx" />
-    <Content Include="GitTest.html" />
-    <Content Include="GitTest_WebForm.aspx" />
     <Content Include="images\1.png" />
     <Content Include="images\10.png" />
     <Content Include="images\11.png" />
@@ -163,6 +157,7 @@
     <Content Include="js\ajaxfileupload.js" />
     <Content Include="js\fileprogress.js" />
     <Content Include="js\handlers.js" />
+    <Content Include="js\html5shiv.js" />
     <Content Include="js\jquery-1.10.2.min.js" />
     <Content Include="js\menu_min.js" />
     <Content Include="js\Register.js" />
@@ -237,13 +232,6 @@
     </Compile>
     <Compile Include="detail.aspx.designer.cs">
       <DependentUpon>detail.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GitTest_WebForm.aspx.cs">
-      <DependentUpon>GitTest_WebForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GitTest_WebForm.aspx.designer.cs">
-      <DependentUpon>GitTest_WebForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="javascript\Upload.aspx.cs">
       <DependentUpon>Upload.aspx</DependentUpon>
@@ -354,6 +342,10 @@
     <ProjectReference Include="..\Pex.Core\Pex.Core.csproj">
       <Project>{d73e6140-3cb0-4ba9-acf0-eebeae0129a7}</Project>
       <Name>Pex.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pex.PlayVideo\Pex.PlayVideo.csproj">
+      <Project>{8f5c8b2f-8aa2-4fc6-a3a1-c96eab0ec044}</Project>
+      <Name>Pex.PlayVideo</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
