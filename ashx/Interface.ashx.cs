@@ -6,12 +6,13 @@ using Pex.PlayVideo.Dao;
 using Hospital.Myclass;
 using System.Web.SessionState;
 
+
 namespace Hospital.ashx
 {
     /// <summary>
     /// Interface 的摘要说明
     /// </summary>
-    public class Interface : IHttpHandler
+    public class Interface : IHttpHandler, IRequiresSessionState
     {
 
         public void ProcessRequest(HttpContext context)

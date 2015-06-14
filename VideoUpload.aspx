@@ -329,11 +329,15 @@
                           <option value="34">结直肠</option>
                         </select>
                         <select id="select4" name="select">
+                            <option value ="410">医改政策</option>
+                            <option value ="411">医患关系</option>
                           <option value ="45">其他</option>
                         </select>
                         <select id="select5" name="select">
                           <option value ="56">医学会议</option>
                             <option value ="57">医学英语</option>
+                             <option value ="58">医学考试</option>
+                            <option value ="59">其他</option>
                         </select>
 					</td>
 				</tr>

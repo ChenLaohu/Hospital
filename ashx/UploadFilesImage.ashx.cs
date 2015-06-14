@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.SessionState;
+
 
 namespace Hospital.ashx
 {
     /// <summary>
     /// UploadFilesImage 的摘要说明
     /// </summary>
-    public class UploadFilesImage : IHttpHandler
+    public class UploadFilesImage : IHttpHandler, IRequiresSessionState
     {
 
         public void ProcessRequest(HttpContext context)

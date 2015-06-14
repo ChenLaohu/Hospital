@@ -24,7 +24,7 @@
     	            async: false, //默认为true 异步   
     	            success: function (result) {
     	                if (result == 1) {
-    	                    document.location.href = "VideoUpload.aspx";
+    	                    document.location.href = "index.aspx";
     	                    //history.go(-1);
     	                }
     	                else

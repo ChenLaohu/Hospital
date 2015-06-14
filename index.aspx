@@ -85,7 +85,7 @@
 				
 				<!--结束第三部分-->
 				<div class="part1">
-					<div class="part1_Name">医学视频</div>
+					<div class="part1_Name">医学课程</div>
 					<div class="part1_left">
 						<%for(int i=0;i<list1.Count;i++) {%>
 					<%

@@ -35,8 +35,8 @@
                 dataType: "json",
                 async: false, //默认为true 异步   
                 success: function (result) {
-                    alert(result);
-                    
+                   // alert(result);
+                    document.getElementById("name").innerHTML = result.userName;
 
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -74,7 +74,7 @@
         <div id="left">
             <div id="left_part1">
                 <img src="images/4.png" width="120" height="120" />
-                <h3>路人甲路人乙</h3>
+                <h3 id="name"></h3>
             </div>
             <div id="left_part2">
                     <a href="#" class="current" id="one">

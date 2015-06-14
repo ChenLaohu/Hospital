@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Share.master.cs" Inherits="Hospital.Share" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>   维视医学视频网</title>
+    <link rel="stylesheet" href="css/share.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+          <header>
+			<div id="header_top">
+				<div id="header_top_logo"><img src="images/9.png" width="261" height="81"/></div>
+				<div id="header_top_search">
+                    <ul>
+                        <li><a href="index.aspx">首页</a></li>
+                        <li>|</li>
+                        <li><a href="list.aspx">手术视频</a></li>
+                        <li>|</li>
+                        <li><a href="list.aspx">医学课程</a></li>
+                        <li>|</li>
+                        <li><a href="list.aspx">医生之声</a></li>
+                        <li>|</li>
+                        <li><a href="list.aspx">剪辑服务</a></li>
+                    </ul>
+				</div>
+				<div id="header_top_application">
+					<a href="Login.aspx"><img src="images/31.jpg" width="80" height="78"/></a>
+					<a href="Personal.aspx"><img src="images/32.jpg" width="73" height="78"/></a>
+					<a href="#"><img src="images/33.jpg" width="87" height="78"/></a>
+				</div>
+			</div>
+			<!--结束header_top-->
+			<div id="header_bottom">
+				<% if(userName==null) { %>
+                    <a href="Login.aspx" style="margin-left:30px; margin-top:5px; font-size:18px;">游客,请登录！</a>
+                <% } else { %>
+                    <a style="margin-left:30px; margin-top:5px; font-size:18px; color:red;"><%= userName %></a>
+                <% } %>
+                <div id="header_bottom_lm">
+					<ul>
+						<li style="margin-left: 0px; display:none;"><p><img src="images/4.png" width="28" height="28"/></p><a href="list.aspx">手术视频</a></li>
+						<li style="display:none;"><p><img src="images/5.png" width="28" height="28"/></p><a href="list.aspx">医学课程</a></li>
+						<li style="display:none;"><p><img src="images/6.png" width="28" height="28"/></p><a href="list.aspx">医生之声</a></li>
+						<li style="display:none;"><p><img src="images/7.png" width="28" height="28"/></p><a href="list.aspx">剪辑服务</a></li>
+						<li style="float: right;"><p><img src="images/8.png" width="28" height="28"/></p><a href="VideoUpload.aspx">视频上传</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--结束栏目-->
+		</header>
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+        <footer>
+			<p>维视吉医学视频网 http://www.esurg.com/</p>
+			<p>维视吉医学视频网版权所有 © 2015-2025</p>
+		</footer>
+    </form>
+</body>
+</html>
