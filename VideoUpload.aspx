@@ -216,6 +216,15 @@
             var jybz = $("#jybz").val();
             var spsm = $("#spsm").val();
             var type = $("#select3").val();
+            var sfyc = 0;
+            var cc ="";
+
+            if ($("input[name=sfyc]:checked").attr("value") == "1") {
+                sfyc = 1;
+            } else {//非原创
+                cc = $("#cc").html();
+            }
+
             var n = "0";  //0父类  1子类
             if (type == 00) {
                 //type = $("#select2").val().replace(/3/, '');
@@ -242,7 +251,7 @@
             $.ajax({
                 type: "post",
                 url: "javascript/Upload.aspx/insertDeatilToSQL",
-                data: "{videoname:'" + videoname + "',enname:'" + enname + "',doctor:'" + doctor + "',ssyy:'" + ssyy + "',ssjj:'" + ssjj + "',bpts:'" + bpts + "',jybz:'" + jybz + "',spsm:'" + spsm + "',type:'" + type + "',n:'" + n + "'}",
+                data: "{videoname:'" + videoname + "',enname:'" + enname + "',doctor:'" + doctor + "',ssyy:'" + ssyy + "',ssjj:'" + ssjj + "',bpts:'" + bpts + "',jybz:'" + jybz + "',spsm:'" + spsm + "',type:'" + type + "',n:'" + n + "',sfyc:" + sfyc + ",cc:'"+cc+"'}",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (data) {
@@ -266,6 +275,13 @@
             //history.go(0);
         }
 
+        function check() {
+            if ($("input[name=sfyc]:checked").attr("value") == "1") {
+                $("#cc").attr("disabled", "");
+            } else {
+                $("#cc").removeAttr("disabled");
+            }
+        }
 
     </script>
 	<style>
@@ -383,7 +399,16 @@
 					<td class="kong"></td>
 					<td class="nr"> <textarea  class="reg_input" name="spsm" id="spsm" <%--onblur="checkusername(this.value);"--%>  style="height:100px; width:400px;"></textarea ></td>
 				</tr>
-			</table>
+				<tr><td class="bt"></td></tr>
+                <tr>
+					<td class="bt">是否原创</td>
+					<td class="kong"></td>
+					<td class="nr">
+                        <div style="width: 100px;margin: auto;"><input type="radio" name="sfyc" value="1" onclick="check()" checked />原创<input type="radio" name="sfyc" value="0" onclick="check()" />非原创</div>
+                        <textarea  class="reg_input" name="cc" id="cc"  style="height:100px; width:400px;" disabled></textarea >
+					</td>
+				</tr>
+                </table>
                 
             <div id="jieshao">
                 凡发布的视频、图片、文字等内容若有侵权、色情、暴力等违反法律、法规的内容，视频上传者应负全责！

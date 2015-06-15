@@ -8,7 +8,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.Services;
 using Pex.PlayVideo.Dao;
-using System.Web.SessionState; //引入命名空间
+using System.Web.SessionState;
+using Pex.PlayVideo.Entity; //引入命名空间
 
 namespace Hospital.javascript
 {
@@ -70,10 +71,10 @@ namespace Hospital.javascript
 
 
         [WebMethod]
-        public static int insertDeatilToSQL(string videoname, string enname, string doctor, string ssyy, string ssjj, string bpts, string jybz, string spsm, string type, string n)
+        public static int insertDeatilToSQL(string videoname, string enname, string doctor, string ssyy, string ssjj, string bpts, string jybz, string spsm, string type, string n, int sfyc, string cc)
         {
             VideoDao dao = new VideoDao();
-            return dao.insert(videoname, enname, doctor, ssyy, ssjj, bpts, jybz, spsm, type, n);
+            return dao.insert(videoname, enname, doctor, ssyy, ssjj, bpts, jybz, spsm, type, n, sfyc, cc);
         }
 
         [WebMethod]
@@ -86,6 +87,22 @@ namespace Hospital.javascript
         public static bool addClick(string TableID) {
             VideoDao dao = new VideoDao();
             return dao.addClick(TableID);
+        }
+
+
+        [WebMethod]
+        public static List<Comment> getList(string TableID)
+        {
+            CommentDao dao = new CommentDao();
+            return dao.getList(TableID); ;
+        }
+
+        [WebMethod]
+        public static bool insert(string videoID, string content)
+        {
+            CommentDao dao = new CommentDao();
+
+            return dao.insert(videoID, content);
         }
     }
 }
